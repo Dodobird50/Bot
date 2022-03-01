@@ -91,7 +91,7 @@ public class UpdateLastKnownEnrolledUserList {
 	}
 
 	private static void notifyUserOfEnrollment( String phoneNumber ) {
-		Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
+//		Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
 		String message = "Hello! This message is to nofify you that you have been enrolled in the CVS COVID-19 "
 				+ "vaccine bot. If you would like to unenroll, please fill out the form at "
 				+ "https://forms.gle/QGjM5M7aihtnKFfQ8. Thank you!";
@@ -110,8 +110,8 @@ public class UpdateLastKnownEnrolledUserList {
 		}
 		message = message.substring( 0, message.length() - 1 ); // Delete final newline character
 
-		Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
-				new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
+//		Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
+//				new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
 		System.out.println( "Notified " + phoneNumber + " of enrollment." );
 	}
 
@@ -142,12 +142,12 @@ public class UpdateLastKnownEnrolledUserList {
 	}
 
 	private static void notifyUserOfUnenrollment( String phoneNumber ) {
-		Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
+//		Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
 		String message = "Hello! This message is to nofify you that you have unenrolled in the CVS COVID-19 vaccine "
 				+ "bot. If you would like to re-enroll, please fill out the form at "
 				+ "https://forms.gle/QGjM5M7aihtnKFfQ8. We are sorry to see you go!";
-		Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
-				new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
+//		Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
+//				new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
 
 		System.out.println( "Notified " + phoneNumber + " of unenrollment." );
 	}

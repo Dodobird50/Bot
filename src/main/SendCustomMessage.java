@@ -34,9 +34,9 @@ public class SendCustomMessage {
 				+ "future endeavors!";
 
 		for ( String phoneNumber : phoneNumbers ) {
-			Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
-			Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
-					new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
+//			Twilio.init( MasterControl.getAccountSid(), MasterControl.getAuthToken() );
+//			Message.creator( new com.twilio.type.PhoneNumber( phoneNumber ),
+//					new com.twilio.type.PhoneNumber( "+17328387875" ), message ).create();
 			System.out.println( "Custom message sent to " + phoneNumber );
 		}
 
